@@ -4,7 +4,6 @@
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
@@ -13,4 +12,76 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-family-main);
+  font-variation-settings: 'wght' var(--font-weight-text);
+}
+
+main {
+  position: relative;
+  margin-top: -100px;
+}
+
+header {
+  width: 100%;
+  height: clamp(667px, calc(667px + (960 - 667) * (100vw - 375px) / (1440 - 375)), 960px);
+  background-image:
+    url('../images/stripe.png'),
+    linear-gradient(#e7e7e7, #1A1A1A);
+  background-size: 2px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: var(--font-family-accent);
+}
+
+.header__content {
+  width: clamp(100%, calc(100% - 40px), 700px);
+  max-width: 700px;
+  background-color: #FFF;
+  border: 2px solid #000;
+  min-height: clamp(323px, calc(323px + 41 * (100vw - 375px) / (1440 - 375)), 364px);
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.header__title-accent {
+  margin-bottom: 20px;
+  font-size: clamp(49px, calc(49px + 16 * (100vw - 375px) / 1065), 65px);
+}
+
+.header__title {
+  text-transform: uppercase;
+  font-size: clamp(14px, calc(14px + 9 * (100vw - 375px) / 1065), 23px);
+}
+
+.card {
+  width: min(100%, 700px);
+  max-width: 700px;
+  background: #FFF;
+  border: 2px solid #000;
+  margin: 0 auto 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  font-family: var(--font-family-main);
+  font-variation-settings: 'wght' var(--font-weight-title);
+}
+
+.card__content {
+  padding: var(--content-section-padding);
+}
+
+.card__like-button {
+  font-family: var(--font-family-accent);
+  font-size: var(--button-font-size);
+  
 }
