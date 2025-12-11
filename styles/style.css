@@ -18,7 +18,7 @@
 
 main {
   position: relative;
-  margin-top: -100px;
+  margin-top: clamp(-395px, calc(-142px - 253 * (100vw - 375px) / 1065), -142px);
 }
 
 header {
@@ -27,7 +27,7 @@ header {
   background-image:
     url('../images/stripe.png'),
     linear-gradient(#e7e7e7, #1A1A1A);
-  background-size: 2px;
+  background-size: 4px;
 
   display: flex;
   flex-direction: column;
@@ -74,14 +74,50 @@ header {
 .card__title {
   font-family: var(--font-family-main);
   font-variation-settings: 'wght' var(--font-weight-title);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: clamp(4px, calc(4px - 1 * (100vw - 375px) / 1065), 4px);
+  padding-bottom: clamp(3px, calc(6px - 3 * (100vw - 375px) / 1065), 6px);
 }
 
 .card__content {
   padding: var(--content-section-padding);
+  font-variation-settings: 'wght' var(--font-weight-text);
+  font-size: 18px;
+  line-height: 21px;
+  
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: end;
 }
 
 .card__like-button {
   font-family: var(--font-family-accent);
   font-size: var(--button-font-size);
-  
+  border: 2px solid #000;
+  padding: 12.5px 37px;
 }
+
+.card__content-text:first-child {
+  margin-bottom: var(--distance-between-paragraphs);
+}
+
+.card__content-text:nth-child(2) {
+  margin-bottom: 25px;
+}
+
+.card-image-container {
+  width: 100%;
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.card-image {
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%; 
+}
+
